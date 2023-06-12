@@ -1,0 +1,52 @@
+﻿<Window x:Class="UserManager.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserManager.App"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="275" Width="450"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal"
+        ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ResourceDictionary Source="Styles.xaml"/>
+    </Window.Resources>
+
+    <StackPanel Style="{StaticResource Style_StackPanel_Vertical}">
+        <TextBlock Text="Авторизация" 
+                   Style="{StaticResource Style_Header}"/>
+
+        <Grid Style="{StaticResource Style_GridInputs}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0"
+                   Content="Логин"
+                   Style="{StaticResource Style_LabelInput}"/>
+            <TextBox Grid.Row="0" Grid.Column="1"
+                     Style="{StaticResource Style_Input}"/>
+
+            <Label Grid.Row="1" Grid.Column="0"
+                   Content="Пароль"
+                   Style="{StaticResource Style_LabelInput}"/>
+            <TextBox Grid.Row="1" Grid.Column="1"
+                     Style="{StaticResource Style_Input}"/>
+        </Grid>
+
+        <StackPanel Style="{StaticResource Style_StackPanel_Buttons}">
+            <Button Content="Очистить"
+                    Style="{StaticResource Style_ButtonClear}"/>
+            <Button Content="Войти"
+                    Style="{StaticResource Style_ButtonAuth}"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
+
