@@ -1,0 +1,85 @@
+﻿@startuml
+'https://plantuml.com/class-diagram
+
+class Account {
++ Id : int
++ Login : string
++ Password : string
++ IsActive : bool
+}
+
+interface ITableOperation<T> {
++ {abstract} Change(sql : string) : bool
++ {abstract} FindAll(sql : string) : IEnumerable<T>
++ {abstract} Find(sql : string) : T
+}
+
+ITableOperation <|.. TableOperationSqLite
+class TableOperationSqLite<T> {
+- db : SqliteConnection
+
++ TableOperationSqLite(connectionString : string)
+
++ Change(sql : string) : bool
++ FindAll(sql : string) : IEnumerable<T>
++ Find(sql : string) : T
+}
+
+ITableOperation <|.. TableOperation
+ITableOperation <--* TableOperation
+class TableOperation<T> {
+- table : ITableOperation
+
++ TableOperationSqLite(table : ITableOperation)
+
++ Change(sql : string) : bool
++ FindAll(sql : string) : IEnumerable<T>
++ Find(sql : string) : T
+}
+
+interface ITable<T> {
++ {abstract} Create(obj : T) : bool
++ {abstract} Update(obj : T) : bool
++ {abstract} Delete(obj : T) : bool
++ {abstract} FindAll() : IEnumerable<T>
++ {abstract} FindById(id : int) : T
+}
+
+ITable <|-- ITableAccount
+interface ITableAccount {
++ {abstract} CheckLoginPassword(login : string, password : string) : bool
+}
+
+ITableAccount <|.. TableAccountsSql
+TableOperation <--* TableAccountsSql
+Account <-- TableAccountsSql
+class TableAccountsSql {
+- tableOperation : TableOperation<Account>
+
+TableAccountsSql(source : ITableOperation<Account>)
+
++ CheckLoginPassword(login : string, password : string) : bool
++ Create(obj : Account) : bool
++ Update(obj : Account) : bool
++ Delete(obj : Account) : bool
++ FindAll() : IEnumerable<Account>
++ FindById(id : int) : Account
+}
+
+ITableAccount <|.. TableAccounts
+ITableAccount <--* TableAccounts
+Account <-- TableAccounts
+class TableAccounts {
+- table : ITableAccount
+
++ TableAccount(table : ITableAccount)
+
++ CheckLoginPassword(login : string, password : string) : bool
++ Create(obj : Account) : bool
++ Update(obj : Account) : bool
++ Delete(obj : Account) : bool
++ FindAll() : IEnumerable<Account>
++ FindById(id : int) : Account
+}
+
+@enduml

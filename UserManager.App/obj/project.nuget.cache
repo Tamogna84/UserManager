@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "3Vrez5X2SlXgP6dCPnbNYf5LIaRA2ftiFO5pVWO5ci1YCCkVZRN0fplDhWdFGOD3My/sB6qhY461VcyFUZ+A2Q==",
+  "dgSpecHash": "g+npqbZVRDapcfgGtD/s9FxV7D9SeNDOOzFnsW7hzr5ZrmjICKqXDE4dkA3LYocciPCwCrFibnPorjlCOvg2iA==",
   "success": true,
   "projectFilePath": "C:\\Users\\naumo\\source\\repos\\UserManager\\UserManager.App\\UserManager.App.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\naumo\\.nuget\\packages\\dapper\\2.0.138\\dapper.2.0.138.nupkg.sha512",
+    "C:\\Users\\naumo\\.nuget\\packages\\microsoft.data.sqlite\\7.0.7\\microsoft.data.sqlite.7.0.7.nupkg.sha512",
+    "C:\\Users\\naumo\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.7\\microsoft.data.sqlite.core.7.0.7.nupkg.sha512",
+    "C:\\Users\\naumo\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.4\\sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
+    "C:\\Users\\naumo\\.nuget\\packages\\sqlitepclraw.core\\2.1.4\\sqlitepclraw.core.2.1.4.nupkg.sha512",
+    "C:\\Users\\naumo\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.4\\sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",
+    "C:\\Users\\naumo\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.4\\sqlitepclraw.provider.e_sqlite3.2.1.4.nupkg.sha512",
+    "C:\\Users\\naumo\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
   "logs": []
 }

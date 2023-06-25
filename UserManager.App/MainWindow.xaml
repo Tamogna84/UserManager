@@ -5,19 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserManager.App"
         mc:Ignorable="d"
-        Title="Авторизация" Height="275" Width="450"
-        WindowStartupLocation="CenterScreen"
+        Title="Авторизация" 
+        Height="250" Width="450"
         WindowState="Normal"
+        WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
-
+    
     <Window.Resources>
         <ResourceDictionary Source="Styles.xaml"/>
     </Window.Resources>
-
+    
     <StackPanel Style="{StaticResource Style_StackPanel_Vertical}">
-        <TextBlock Text="Авторизация" 
+        <TextBlock x:Name="Header" 
+                   Text="Авторизация" 
                    Style="{StaticResource Style_Header}"/>
-
+        
         <Grid Style="{StaticResource Style_GridInputs}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -27,26 +29,33 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-
+            
             <Label Grid.Row="0" Grid.Column="0"
+                   x:Name="Label_Login"
                    Content="Логин"
                    Style="{StaticResource Style_LabelInput}"/>
             <TextBox Grid.Row="0" Grid.Column="1"
+                     x:Name="Input_Login"
                      Style="{StaticResource Style_Input}"/>
-
+            
             <Label Grid.Row="1" Grid.Column="0"
+                   x:Name="Label_Password"
                    Content="Пароль"
                    Style="{StaticResource Style_LabelInput}"/>
             <TextBox Grid.Row="1" Grid.Column="1"
+                     x:Name="Input_Password"
                      Style="{StaticResource Style_Input}"/>
         </Grid>
-
+        
         <StackPanel Style="{StaticResource Style_StackPanel_Buttons}">
-            <Button Content="Очистить"
-                    Style="{StaticResource Style_ButtonClear}"/>
-            <Button Content="Войти"
-                    Style="{StaticResource Style_ButtonAuth}"/>
+            <Button x:Name="Button_Clear"
+                    Content="Очистить"
+                    Style="{StaticResource Style_ButtonClear}"
+                    Click="Button_Clear_OnClick"/>
+            <Button x:Name="Button_Auth"
+                    Content="Войти"
+                    Style="{StaticResource Style_ButtonAuth}"
+                    Click="Button_Auth_OnClick"/>
         </StackPanel>
     </StackPanel>
 </Window>
-
